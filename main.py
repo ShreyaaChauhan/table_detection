@@ -6,7 +6,7 @@ import mmcv
 import os.path as osp
 
 
-config = 'configs/mask_rcnn/mask_rcnn_dit_icdar2019.py'
+config = 'configs/mask_rcnn/mask_rcnn_dit_GO_IIT_5K.py'
 # Set the device to be used for evaluation
 device='cuda:0'
 # Load the config
@@ -33,3 +33,6 @@ model.CLASSES = ('table',)
 # Create work_dir
 mmcv.mkdir_or_exist(osp.abspath(config.work_dir))
 train_detector(model, datasets, config, distributed=False, validate=True)
+
+
+
