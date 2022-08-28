@@ -10,8 +10,8 @@ model = dict(
         norm_cfg = dict(type='GN', num_groups=32, requires_grad=True),
         norm_eval=True,
         style='pytorch',
-        init_cfg=dict(type='Pretrained', checkpoint='checkpoints/resnet101-5d3b4d8f.pth')
-        #init_cfg = None
+        #init_cfg=dict(type='Pretrained', checkpoint='checkpoints/resnet101-5d3b4d8f.pth')
+        init_cfg = None
         ),
     neck=dict(
         type='FPN',

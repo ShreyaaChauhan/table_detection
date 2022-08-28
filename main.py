@@ -6,7 +6,7 @@ import mmcv
 import os.path as osp
 
 
-config = 'configs/mask_rcnn/mask_rcnn_dit_GO_IIT_5K.py'
+config = 'configs/mask_rcnn/mask_rcnn_dit_icdar2019.py'
 # Set the device to be used for evaluation
 device='cuda:0'
 # Load the config

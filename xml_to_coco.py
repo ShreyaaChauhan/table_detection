@@ -71,7 +71,6 @@ def convert(xml_files, json_file, data_path, data_path_img):
                         "bbox": bbox,
                         "category_id": 0,
                         "id": bnd_id,
-                        "ignore": 0,
                         "segmentation": [],
                     }
                     json_dict["annotations"].append(ann)
@@ -106,7 +105,7 @@ if __name__ == "__main__":
     print("Number of xml files (test): {}".format(len(xml_files)))
     image_files = os.listdir(data_path_img)
     print("Number of jpg files (test): {}".format(len(image_files)))
-    #convert(xml_files, "./test.json", data_path, data_path_img)
+    convert(xml_files, "./test.json", data_path, data_path_img)
     
     # Dataset path for train
     data_path = "data/IIIT-AR-13K/training_xml"
@@ -115,7 +114,7 @@ if __name__ == "__main__":
     print("Number of xml files (train): {}".format(len(xml_files)))
     image_files = os.listdir(data_path_img)
     print("Number of jpg files (train): {}".format(len(image_files)))
-    #convert(xml_files, "./train.json", data_path, data_path_img)
+    convert(xml_files, "./train.json", data_path, data_path_img)
     '''
     for i in range(0, 420):
         xml_files = xml_files + glob.glob(os.path.join(data_path, "AR_"+str(1000+i)+".xml"))

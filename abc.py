@@ -1,24 +1,13 @@
 import json
 import shapely.geometry
 DATA = {}
-with open("data/GO-IIIT-5K/train.json") as json_file:
+with open("data/IIIT-AR-13K/test.json") as json_file:
     GO_IIIT_5K_test= json.load(json_file)
     data = {
         "categories": GO_IIIT_5K_test["categories"],
         "images": GO_IIIT_5K_test["images"] ,
         "annotations": GO_IIIT_5K_test["annotations"] ,
     }
-    '''for info in data["annotations"]:
-        data['adc'] = "ghj"
-        #print(info["segmentation"])
-    annotations = []
-    for info in data["annotations"]:
-        info["id"] =  count
-        annotations.append(info)
-        count +=1
-    data["annotations"] = annotations
-    for i in data["annotations"]:
-        print(i['abc'])'''
     annotations = []
     #convert bounding boxes to polygons
     for i in data["annotations"]:
@@ -40,5 +29,5 @@ with open("data/GO-IIIT-5K/train.json") as json_file:
     #print(data["annotations"])'''
     data["annotations"] = annotations
     DATA = data
-with open("train.json", 'w') as test: 
+with open("test.json", 'w') as test: 
     json.dump(data, test, indent = 4, sort_keys=True)

@@ -6,7 +6,7 @@ checkpoint_file = 'exps/latest.pth'
 # build the model from a config file and a checkpoint file
 model = init_detector(config_file, checkpoint_file, device='cuda:0')
 # test a single image and show the results
-img =  "data/GO-IIIT-5K/test/AR_1023.jpg" # or img = mmcv.imread(img), which will only load it once
+img =  "data/trackA_modern/test/cTDaR_t10000.jpg" # or img = mmcv.imread(img), which will only load it once
 result = inference_detector(model, img)
 # visualize the results in a new window
 #model.show_result(img, result)
